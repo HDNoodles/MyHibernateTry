@@ -1,13 +1,24 @@
 package com.example.hibernateworld.dao;
 
 import com.example.hibernateworld.domain.City;
-import com.example.hibernateworld.domain.CityHibernate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-public interface CityDao {
+@Repository("cityDao")
+public class CityDao extends AbstractHibernateDao<City>{
 
-    City getCityById(Integer id);
+    public CityDao() {
+        setClazz(City.class);
+    }
 
-    List<City> getAllCities();
+    public City getCityById(Integer id) {
+        return findById(id);
+    }
+
+    public List<City> getAllCities() {
+        List<City> list = this.getAll();
+        return list.stream().collect(Collectors.toList());
+    }
 }
