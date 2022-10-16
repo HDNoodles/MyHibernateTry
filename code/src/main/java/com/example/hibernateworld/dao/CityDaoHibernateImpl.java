@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Repository("cityDaoHibernateImpl")
+@Repository("cityDao")
 public class CityDaoHibernateImpl extends AbstractHibernateDao<CityHibernate> implements CityDao {
 
     public CityDaoHibernateImpl() {

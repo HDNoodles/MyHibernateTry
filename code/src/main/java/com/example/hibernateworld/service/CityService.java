@@ -16,7 +16,7 @@ public class CityService {
     private CityDao cityHibernateDao;
 
     @Autowired
-    @Qualifier("cityDaoHibernateImpl")
+    @Qualifier("cityDao")
     public void setCityHibernateDao(CityDao cityHibernateDao) {
         this.cityHibernateDao = cityHibernateDao;
     }
