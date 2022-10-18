@@ -27,6 +27,7 @@ public class CityService {
 
     @Transactional
     public List<City> getAllCities() {
+//        return cityDao.getAll();
         return cityDao.getAllCities();
     }
 }
